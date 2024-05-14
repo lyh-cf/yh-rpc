@@ -1,4 +1,4 @@
-package com.lyh.rpc.serializer;
+package com.lyh.rpc.serializer.impl;
 
 /*
  *@title KryoSerializer
@@ -11,6 +11,7 @@ package com.lyh.rpc.serializer;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
+import com.lyh.rpc.serializer.Serializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

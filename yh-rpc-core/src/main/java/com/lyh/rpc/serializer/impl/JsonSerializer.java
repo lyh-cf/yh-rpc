@@ -1,4 +1,4 @@
-package com.lyh.rpc.serializer;
+package com.lyh.rpc.serializer.impl;
 
 /*
  *@title JsonSerializer
@@ -12,6 +12,8 @@ import com.lyh.rpc.model.RpcRequest;
 import com.lyh.rpc.model.RpcResponse;
 import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lyh.rpc.serializer.Serializer;
+
 public class JsonSerializer implements Serializer {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 

@@ -1,4 +1,4 @@
-package com.lyh.rpc.serializer;
+package com.lyh.rpc.serializer.impl;
 
 /*
  *@title HessianSerializer
@@ -10,6 +10,7 @@ package com.lyh.rpc.serializer;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
+import com.lyh.rpc.serializer.Serializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

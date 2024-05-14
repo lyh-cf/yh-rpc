@@ -1,4 +1,4 @@
-package com.lyh.rpc.serializer;
+package com.lyh.rpc.serializer.impl;
 
 /*
  *@title JdkSerializer
@@ -7,6 +7,8 @@ package com.lyh.rpc.serializer;
  *@version 1.0
  *@create 2024/5/12 17:08
  */
+
+import com.lyh.rpc.serializer.Serializer;
 
 import java.io.*;
 
