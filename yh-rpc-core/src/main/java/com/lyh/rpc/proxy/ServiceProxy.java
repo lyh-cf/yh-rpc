@@ -10,10 +10,12 @@ package com.lyh.rpc.proxy;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.lyh.rpc.RpcApplication;
 import com.lyh.rpc.model.RpcRequest;
 import com.lyh.rpc.model.RpcResponse;
 import com.lyh.rpc.serializer.JdkSerializer;
 import com.lyh.rpc.serializer.Serializer;
+import com.lyh.rpc.serializer.SerializerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -33,7 +35,7 @@ public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args){
         // 指定序列化器
-        Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 构造请求
         RpcRequest rpcRequest = RpcRequest.builder()

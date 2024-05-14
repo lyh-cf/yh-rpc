@@ -8,6 +8,7 @@ package com.lyh.rpc.config;
  *@create 2024/5/13 16:16
  */
 
+import com.lyh.rpc.serializer.SerializerKeys;
 import lombok.Data;
 
 /**
@@ -41,4 +42,8 @@ public class RpcConfig {
      */
     private boolean mock = false;
 
+    /**
+     * 序列化器
+     */
+    private String serializer = SerializerKeys.JDK;
 }

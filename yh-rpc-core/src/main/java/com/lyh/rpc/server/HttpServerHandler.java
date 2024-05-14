@@ -8,11 +8,13 @@ package com.lyh.rpc.server;
  *@create 2024/5/12 19:25
  */
 
+import com.lyh.rpc.RpcApplication;
 import com.lyh.rpc.model.RpcRequest;
 import com.lyh.rpc.model.RpcResponse;
 import com.lyh.rpc.registry.LocalRegistry;
 import com.lyh.rpc.serializer.JdkSerializer;
 import com.lyh.rpc.serializer.Serializer;
+import com.lyh.rpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -33,7 +35,7 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());
