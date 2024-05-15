@@ -9,6 +9,8 @@ package com.lyh.rpc.proxy;
  */
 
 import com.lyh.rpc.RpcApplication;
+import com.lyh.rpc.proxy.MockServiceProxy;
+import com.lyh.rpc.proxy.ServiceProxy;
 
 import java.lang.reflect.Proxy;
 

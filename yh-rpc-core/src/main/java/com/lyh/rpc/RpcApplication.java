@@ -8,8 +8,11 @@ package com.lyh.rpc;
  *@create 2024/5/13 16:26
  */
 
+import com.lyh.rpc.config.RegistryConfig;
 import com.lyh.rpc.config.RpcConfig;
 import com.lyh.rpc.constant.RpcConstant;
+import com.lyh.rpc.registry.Registry;
+import com.lyh.rpc.registry.RegistryFactory;
 import com.lyh.rpc.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,8 +32,12 @@ public class RpcApplication {
      */
     public static void init(RpcConfig newRpcConfig) {
         rpcConfig = newRpcConfig;
-        //打印日志
         log.info("rpc init, config = {}", newRpcConfig.toString());
+        // 注册中心初始化
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config = {}", registryConfig);
     }
 
     /**

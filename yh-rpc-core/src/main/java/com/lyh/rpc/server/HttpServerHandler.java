@@ -12,7 +12,6 @@ import com.lyh.rpc.RpcApplication;
 import com.lyh.rpc.model.RpcRequest;
 import com.lyh.rpc.model.RpcResponse;
 import com.lyh.rpc.registry.LocalRegistry;
-import com.lyh.rpc.serializer.JdkSerializer;
 import com.lyh.rpc.serializer.Serializer;
 import com.lyh.rpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
