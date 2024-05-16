@@ -16,8 +16,7 @@ import com.lyh.rpc.model.ServiceMetaInfo;
 import com.lyh.rpc.registry.LocalRegistry;
 import com.lyh.rpc.registry.Registry;
 import com.lyh.rpc.registry.RegistryFactory;
-import com.lyh.rpc.server.HttpServer;
-import com.lyh.rpc.server.VertxHttpServer;
+import com.lyh.rpc.server.tcp.VertxTcpServer;
 
 /**
  * 服务提供者示例
@@ -46,8 +45,8 @@ public class ProviderExample {
             throw new RuntimeException(e);
         }
 
-        // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
-        httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8080);
     }
 }

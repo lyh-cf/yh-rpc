@@ -3,8 +3,8 @@ package com.lyh.example.provider;
 import com.lyh.example.common.service.UserService;
 import com.lyh.rpc.RpcApplication;
 import com.lyh.rpc.registry.LocalRegistry;
-import com.lyh.rpc.server.HttpServer;
-import com.lyh.rpc.server.VertxHttpServer;
+import com.lyh.rpc.server.Server;
+import com.lyh.rpc.server.http.VertxHttpServer;
 
 /*
  *@title EasyProviderExample
@@ -21,7 +21,7 @@ public class EasyProviderExample {
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
 
         // 启动 web 服务
-        HttpServer httpServer = new VertxHttpServer();
+        Server httpServer = new VertxHttpServer();
         httpServer.doStart(RpcApplication.getRpcConfig().getServerPort());
     }
 }
