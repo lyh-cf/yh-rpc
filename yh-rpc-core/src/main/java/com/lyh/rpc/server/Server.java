@@ -10,7 +10,7 @@ package com.lyh.rpc.server;
 /*
 编写一个 web 服务器的接口 HttpServer，定义统一的启动服务器方法，便于后续的扩展，比如实现多种不同的 web 服务器。
  */
-public interface HttpServer {
+public interface Server {
     /**
      * 启动服务器
      */
