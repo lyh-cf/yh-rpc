@@ -27,7 +27,7 @@ public class RegistryTest {
     public void init() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress("http://localhost:2379");
-        registry.init(registryConfig);
+        registry.init(registryConfig);//开启心跳检测
     }
 
     @Test
@@ -75,5 +75,12 @@ public class RegistryTest {
          */
         System.out.println("serviceMetaInfoList："+serviceMetaInfoList);
         Assert.assertNotNull(serviceMetaInfoList);
+    }
+    @Test
+    public void heartBeat() throws Exception {
+        // init 方法中已经执行心跳检测了
+        register();
+        // 阻塞 1 分钟
+        Thread.sleep(60 * 1000L);
     }
 }
