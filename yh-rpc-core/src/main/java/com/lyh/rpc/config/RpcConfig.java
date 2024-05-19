@@ -8,6 +8,7 @@ package com.lyh.rpc.config;
  *@create 2024/5/13 16:16
  */
 
+import com.lyh.rpc.loadbalancer.LoadBalancerKeys;
 import com.lyh.rpc.serializer.SerializerKeys;
 import lombok.Data;
 
@@ -51,4 +52,9 @@ public class RpcConfig {
      * 注册中心配置
      */
     private RegistryConfig registryConfig = new RegistryConfig();
+
+    /**
+     * 负载均衡器
+     */
+    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
 }
