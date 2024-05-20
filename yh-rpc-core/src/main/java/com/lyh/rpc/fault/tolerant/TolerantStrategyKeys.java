@@ -1,0 +1,36 @@
+package com.lyh.rpc.fault.tolerant;
+
+/*
+ *@title TolerantStrategyKeys
+ *@description
+ *@author LYH
+ *@version 1.0
+ *@create 2024/5/20 14:58
+ */
+/**
+ * 容错策略键名常量
+ */
+public interface TolerantStrategyKeys {
+
+    /**
+     * 故障恢复
+     */
+    String FAIL_BACK = "failBack";
+
+    /**
+     * 快速失败
+     */
+    String FAIL_FAST = "failFast";
+
+    /**
+     * 故障转移
+     */
+    String FAIL_OVER = "failOver";
+
+    /**
+     * 静默处理
+     */
+    String FAIL_SAFE = "failSafe";
+
+}
+

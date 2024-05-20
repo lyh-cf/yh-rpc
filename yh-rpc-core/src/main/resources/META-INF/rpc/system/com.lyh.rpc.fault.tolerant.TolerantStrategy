@@ -1,0 +1,4 @@
+failBack=com.lyh.rpc.fault.tolerant.impl.FailBackTolerantStrategy
+failFast=com.lyh.rpc.fault.tolerant.impl.FailFastTolerantStrategy
+failOver=com.lyh.rpc.fault.tolerant.impl.FailOverTolerantStrategy
+failSafe=com.lyh.rpc.fault.tolerant.impl.FailSafeTolerantStrategy

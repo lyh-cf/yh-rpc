@@ -9,15 +9,13 @@ package com.lyh.rpc.proxy;
  */
 
 import com.lyh.rpc.RpcApplication;
-import com.lyh.rpc.proxy.MockServiceProxy;
-import com.lyh.rpc.proxy.ServiceProxy;
 
 import java.lang.reflect.Proxy;
 
 /**
  * 服务代理工厂（用于创建代理对象）
  */
-public class ServiceProxyFactory {
+public class ProxyFactory {
 
     /**
      * 根据服务类获取代理对象
@@ -30,7 +28,11 @@ public class ServiceProxyFactory {
         if (RpcApplication.getRpcConfig().isMock()) {
             return getMockProxy(serviceClass);
         }
-
+        /*
+        public static Object newProxyInstance(ClassLoader loader,类加载器，直接通过需要代理的类获取就行
+                                          Class<?>[] interfaces,目标类所实现的所有接口
+                                          InvocationHandler h) 方法拦截处理器，可以在里面实现方法的增强
+         */
         return (T) Proxy.newProxyInstance(
                 serviceClass.getClassLoader(),
                 new Class[]{serviceClass},

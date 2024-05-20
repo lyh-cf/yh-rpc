@@ -2,7 +2,7 @@ package com.lyh.example.consumer;
 
 import com.lyh.example.common.pojo.User;
 import com.lyh.example.common.service.UserService;
-import com.lyh.rpc.proxy.ServiceProxyFactory;
+import com.lyh.rpc.proxy.ProxyFactory;
 
 /*
  *@title EasyConsumerExample
@@ -14,7 +14,7 @@ import com.lyh.rpc.proxy.ServiceProxyFactory;
 public class EasyConsumerExample {
     public static void main(String[] args) {
         // 动态代理
-        UserService userService = ServiceProxyFactory.getProxy(UserService.class);
+        UserService userService = ProxyFactory.getProxy(UserService.class);
         User user = new User();
         user.setName("yh");
         //调用
